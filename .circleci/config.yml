@@ -6,4 +6,4 @@ jobs:
     environment:
       FOO: $foo
     steps:
-      - run: sh -c /bin/env
+      - run: sh -c env
