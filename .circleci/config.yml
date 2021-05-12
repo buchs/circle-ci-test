@@ -1,0 +1,9 @@
+---
+jobs:
+  build:
+    docker:
+      - image: alpine
+    environment:
+      FOO: $foo
+    steps:
+      - run: sh -c /bin/env
