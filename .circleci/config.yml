@@ -4,14 +4,13 @@ executors:
   test-bundle:
     docker:
       - image: cimg/base:2021.04
-    command: ['sh', 'env']
-    environment:
-      FOO: $foo
-    docker:
+        command: ["sh", "env"]
+        environment:
+          FOO: $foo
       - image: alpine
-    command: ['sh', 'env']
-    environment:
-      FOO: $foo
+        command: ["sh", "env"]
+        environment:
+          FOO: $foo
 
 jobs:
   build:
