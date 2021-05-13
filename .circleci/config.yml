@@ -25,3 +25,9 @@ jobs:
     executor: test-bundle
     steps:
       - run: sh -c env
+
+workflows:
+  test:
+    jobs:
+      - build
+      - bundle
