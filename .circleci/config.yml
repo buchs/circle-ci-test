@@ -1,9 +1,27 @@
----
+version: 2.1
+
+executors:
+  test-bundle:
+    docker:
+      - image: cimg/base:2021.04
+    command: ['sh', 'env']
+    environment:
+      FOO: $foo
+    docker:
+      - image: alpine
+    command: ['sh', 'env']
+    environment:
+      FOO: $foo
+
 jobs:
   build:
     docker:
       - image: alpine
     environment:
       FOO: $foo
+    steps:
+      - run: sh -c env
+  bundle:
+    executor: test-bundle
     steps:
       - run: sh -c env
