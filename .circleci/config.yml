@@ -8,10 +8,10 @@ executors:
           FOO: $foo
         command: ["sh", "-c", "env"]
 
-      - image: alpine
-        environment:
-          FOO: $foo
-        command: ["sh", "-c", "env"]
+      # - image: alpine
+      #   environment:
+      #     FOO: $foo
+      #   command: ["sh", "-c", "env"]
 
 jobs:
   build:
