@@ -6,7 +6,7 @@ executors:
       - image: cimg/base:2021.04
         environment:
           FOO: $foo
-        command: ["sh", "-c", "env"]
+      # command: ["sh", "-c", "env"]
 
       # - image: alpine
       #   environment:
