@@ -6,11 +6,11 @@ executors:
       - image: cimg/base:2021.04
         environment:
           FOO: $foo
-      # command: ["sh", "-c", "env"]
 
       - image: alpine
         environment:
           FOO: $foo
+        # Need foo env var here, but getting literal as $foo
         command: ["sh", "-c", "env"]
 
 jobs:
