@@ -26,6 +26,8 @@ jobs:
     steps:
       - run: sh -c env
   where:
+    docker:
+      - image: circleci/node:12
     steps:
       - run: pwd;ls ..
 
