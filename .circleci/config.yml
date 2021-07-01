@@ -25,9 +25,13 @@ jobs:
     executor: test-bundle
     steps:
       - run: sh -c env
+  where:
+    steps:
+      - run: pwd;ls ..
 
 workflows:
   test:
     jobs:
-      - build
-      - bundle
+      - where
+      #- build
+      #- bundle
