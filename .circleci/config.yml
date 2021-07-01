@@ -31,7 +31,7 @@ jobs:
     steps:
       - run: mkdir a; cd a; mkdir repos
       - checkout: { path: repos/$CIRCLE_PROJECT_REPONAME }
-      - run: pwd; ls; cd repos; ls; cd $CIRCLE_PROJECT_REPONAME; ls
+      - run: echo pwd:;pwd; echo ls;ls; echo 'ls a';ls a; echo "ls repos/$CIRCLE_PROJECT_REPONAME";ls repos/$CIRCLE_PROJECT_REPONAME;
 
 workflows:
   test:
