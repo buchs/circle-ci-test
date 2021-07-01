@@ -29,7 +29,8 @@ jobs:
     docker:
       - image: circleci/node:12
     steps:
-      - run: pwd;ls ..
+      - checkout
+      - run: ls; cd circle-ci-test; ls
 
 workflows:
   test:
