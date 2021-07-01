@@ -1,4 +1,18 @@
----
+version: 2.1
+
+executors:
+  test-bundle:
+    docker:
+      - image: cimg/base:2021.04
+        environment:
+          FOO: $foo
+
+      - image: alpine
+        environment:
+          FOO: $foo
+        # Need foo env var here, but getting literal as $foo
+        command: ["sh", "-c", "env"]
+
 jobs:
   build:
     docker:
@@ -7,3 +21,13 @@ jobs:
       FOO: $foo
     steps:
       - run: sh -c env
+  bundle:
+    executor: test-bundle
+    steps:
+      - run: sh -c env
+
+workflows:
+  test:
+    jobs:
+      - build
+      - bundle
