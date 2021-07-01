@@ -29,8 +29,9 @@ jobs:
     docker:
       - image: circleci/node:12
     steps:
-      - checkout
-      - run: ls; cd circle-ci-test; ls
+      - run: mkdir repos
+      - checkout: { path: repos }
+      - run: pwd; ls; cd repos; ls
 
 workflows:
   test:
